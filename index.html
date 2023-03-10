@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora</title>
+    
+</head>
+<body>
+
+    <h1>Calculadora</h1>
+    <div id = "resultado">
+        <p id="numero1" > </p>
+        <p id ="numero2" > </p>   
+        <p id =calculo></p>
+
+    </div>
+
+    <div id = "calculadora">
+
+        
+        <button id = "uno">1</button>
+        <button id = "dos">2</button>
+        <button id = "tres">3</button>
+        <button id = "cuatro">4</button>
+        <button id = "cinco">5</button>
+        <button id = "seis">6</button>
+        <button id = "siete">7</button>
+        <button id = "ocho">8</button>
+        <button id = "nueve">9</button>
+        <button id = "cero">0</button>
+        <button id = "sumar">+</button>
+        <button id = "restar">-</button>
+        <button id = "multiplicar">*</button>
+        <button id = "dividir">/</button>
+        <button id = "calcular">=</button>
+        <button id = "reset">#</button>
+
+    </div>
+
+    <script >
+        const uno = document.getElementById("uno");
+        const dos = document.getElementById("dos");
+        const tres = document.getElementById("tres");
+        const cuatro = document.getElementById("cuatro");
+        const cinco = document.getElementById("cinco");
+        const seis = document.getElementById("seis");
+        const siete = document.getElementById("siete");
+        const ocho = document.getElementById("ocho");
+        const nueve = document.getElementById("nueve");
+        const cero = document.getElementById("cero");
+        const menos = document.getElementById("menos");
+        const suma = document.getElementById("suma");
+        const multiplicar = document.getElementById("multiplicar");
+        const division = document.getElementById("division");
+        const calcular = document.getElementById("calcular");
+        const resetear = document.getElementById("reset")
+        const numero1 = document.getElementById("numero1");
+        const numero2 = document.getElementById("numero2");
+        const operacion = document.getElementById("calculo");
+
+        let primerNumero = "";
+        let segundoNumero = "";
+        let operador = "";
+        let resultado = 0;
+
+        function limpiar() {
+        primerNumero = "";
+        segundoNumero = "";
+        operador = "";
+        resultado = 0;
+        numero1.innerText = "";
+        numero2.innerText = "";
+        operacion.innerText = "";
+        }
+        
+
+
+        resetear.addEventListener('click', function(){
+
+            location.reload();
+        })
+
+        function realizarOperacion() {
+        switch (operador) {
+            case "+":
+            resultado = parseInt(primerNumero) + parseInt(segundoNumero);
+            break;
+            case "-":
+            resultado = parseInt(primerNumero) - parseInt(segundoNumero);
+            break;
+            case "*":
+            resultado = parseInt(primerNumero) * parseInt(segundoNumero);
+            break;
+            case "/":
+            resultado = parseInt(primerNumero) / parseInt(segundoNumero);
+            break;
+            default:
+            resultado = 0;
+            break;
+        }
+
+        
+        // primerNumero = resultado.toString();
+        segundoNumero = "";
+        operacion.innerText = ` =${resultado}`;
+        }
+        
+        uno.addEventListener("click", function () {
+
+        if (operador === "") {
+        primerNumero += "1";
+        numero1.innerText = primerNumero;
+        } else {
+        segundoNumero += "1";
+        numero2.innerText = segundoNumero;
+        }
+        
+        });
+
+        dos.addEventListener("click", function () {
+
+        if (operador === "") {
+        primerNumero += "2";
+        numero1.innerText = primerNumero;
+        } else {
+        segundoNumero += "2";
+        numero2.innerText = segundoNumero;
+        }
+
+        });
+
+        tres.addEventListener("click", function () {
+
+        if (operador === "") {
+        primerNumero += "3";
+        numero1.innerText = primerNumero;
+        } else {
+        segundoNumero += "3";
+        numero2.innerText = segundoNumero;
+        }
+
+        });
+
+        cuatro.addEventListener("click", function () {
+
+        if (operador === "") {
+        primerNumero += "4";
+        numero1.innerText = primerNumero;
+        } else {
+        segundoNumero += "4";
+        numero2.innerText = segundoNumero;
+        }
+
+        });
+
+        cinco.addEventListener("click", function () {
+
+        if (operador === "") {
+        primerNumero += "5";
+        numero1.innerText = primerNumero;
+        } else {
+        segundoNumero += "5";
+        numero2.innerText = segundoNumero;
+        }
+
+        });
+
+        seis.addEventListener("click", function () {
+
+        if (operador === "") {
+        primerNumero += "6";
+        numero1.innerText = primerNumero;
+        } else {
+        segundoNumero += "6";
+        numero2.innerText = segundoNumero;
+        }
+
+        });
+
+        siete.addEventListener("click", function () {
+
+        if (operador === "") {
+        primerNumero += "7";
+        numero1.innerText = primerNumero;
+        } else {
+        segundoNumero += "7";
+        numero2.innerText = segundoNumero;
+        }
+
+        });
+
+        ocho.addEventListener("click", function () {
+
+        if (operador === "") {
+        primerNumero += "8";
+        numero1.innerText = primerNumero;
+        } else {
+        segundoNumero += "8";
+        numero2.innerText = segundoNumero;
+        }
+
+        });
+
+        nueve.addEventListener("click", function () {
+
+        if (operador === "") {
+        primerNumero += "9";
+        numero1.innerText = primerNumero;
+        } else {
+        segundoNumero += "9";
+        numero2.innerText = segundoNumero;
+        }
+
+        });
+
+        cero.addEventListener("click", function () {
+
+        if (operador === "") {
+        primerNumero += "0";
+        numero1.innerText = primerNumero;
+        } else {
+        segundoNumero += "0";
+        numero2.innerText = segundoNumero;
+        }
+
+        });
+
+        sumar.addEventListener("click", function () {
+
+        if (primerNumero === "") return;
+
+        operador = "+";
+        operacion.innerText = "+";
+
+        });
+
+        restar.addEventListener("click", function () {
+
+        if (primerNumero === "") return;
+
+        operador = "-";
+        operacion.innerText = "-";
+
+        });
+
+        multiplicar.addEventListener("click", function () {
+            
+        if (primerNumero === "") return;
+
+        operador = "*";
+        operacion.innerText = "x";
+
+        });
+
+        dividir.addEventListener("click", function () {
+
+        if (primerNumero === "") return;
+
+        operador = "/";
+        operacion.innerText = "÷";
+
+        });
+
+        calcular.addEventListener("click", function () {
+
+        if (segundoNumero === "") return;
+
+        realizarOperacion();
+
+        });
+
+        
+        document.addEventListener("keydown", function (event) {
+        if (event.key === "c") {
+        limpiar();
+        }
+        });
+
+
+
+    </script>
+
+    
+</body>
+</html>
